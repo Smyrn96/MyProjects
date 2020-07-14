@@ -1,0 +1,820 @@
+/***************************************************
+ *                                                 *
+ * file: twitter.c                                 *
+ *                                                 *
+ * @Author  Iacovos G. Kolokasis                   *
+ * @Version 30-03-2018                             *
+ * @email   kolokasis@csd.uoc.gr                   *
+ *                                                 *
+ * @brief   Implementation of tweeter.h            *
+ *                                                 *
+ ***************************************************
+ */
+
+#include "twitter.h"
+
+/**
+ * @brief Optional function to initialize data structures that 
+ *        need initialization
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int initialize()
+{
+	users_s=malloc(sizeof(user_t));
+	users_s->uid=-1;
+	users_s->followers=NULL;
+	users_s->wall_head=NULL;
+	users_s->lc=NULL;
+	users_s->rc=NULL;
+
+	users_p=users_s;
+
+	return 1;
+}
+
+/**
+ * @brief Register user
+ *
+ * @param uid The user's id
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int register_user(int uid)
+{
+	user_t * iterator;
+	user_t * prev;
+	user_t * newUser;
+	user_t * print;
+
+	iterator=users_p;
+	prev=users_s;
+
+	while(iterator->uid!=-1){
+
+		if(iterator->uid==uid){
+			printf("The user with the particular uid is already in the tree\n");
+			return 0;
+		}
+
+		prev=iterator;
+		if(uid < iterator->uid){
+			iterator=iterator->lc;
+		}else if(uid > iterator->uid){
+			iterator=iterator->rc;
+		}
+
+	}
+
+	newUser=malloc(sizeof(user_t));
+	newUser->uid=uid;
+	newUser->lc=users_s;
+	newUser->rc=users_s;
+
+	if(prev->uid==-1){
+		users_p=newUser;
+	}else if(uid < prev->uid){
+		prev->lc=newUser;
+		newUser->par=prev;
+	}else if(uid > prev->uid){
+		prev->rc=newUser;
+		newUser->par=prev;
+	}
+
+	printf("Users= ");
+
+	print=users_p;
+
+	printR(print);
+
+	printf("\n");
+
+	return 1;
+}
+
+/**
+ * @brief User uid1 is now following user uid2
+ *
+ * @param uid1 The 1st user's id
+ * @param uid2 The 2nd user's id
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int subscribe(int uid1, int uid2)
+{
+	user_t * iterator;
+	user_t * prev;
+	follower_t * temp;
+	follower_t * previous;
+	follower_t * newF;
+	follower_t * print;
+
+	iterator=users_p;
+	prev=users_s;
+
+	while(iterator->uid!=-1){
+
+		if(uid1==iterator->uid){
+			prev=iterator;
+			break;
+		}else if(uid1<iterator->uid){
+			iterator=iterator->lc;
+		}else if(uid1>iterator->uid){
+			iterator=iterator->rc;
+		}
+	}
+
+	if(prev->uid==-1){
+		printf("No user with that uid in the tree\n");
+		return 0;
+	}
+
+	temp=prev->followers;
+	previous=NULL;
+
+	while(temp!=NULL){
+
+		if(temp->uid==uid2){
+			printf("The follower with the particular uid is already in the tree\n");
+			return 0;
+		}
+
+		previous=temp;
+		if(uid2<temp->uid){
+			temp=temp->lc;
+		}else if(uid2>temp->uid){
+			temp=temp->rc;
+		}
+
+	} 
+
+	newF=malloc(sizeof(follower_t));
+	newF->uid=uid2;
+	newF->lc=NULL;
+	newF->rc=NULL;
+
+	if(previous==NULL){
+		prev->followers=newF;
+	}else if(uid2<previous->uid){
+		previous->lc=newF;
+	}else if(uid2>previous->uid){
+		previous->rc=newF;
+	}
+
+	printf("Followers= ");
+
+	print=prev->followers;
+
+	printF(print);
+
+	printf("\n");
+
+
+	return 1;
+}
+
+/**
+ * @brief New tweet event
+ * 
+ * @param uid       The user who posted the tweet
+ * @param tid       The tweet's id
+ * @param timestamp The time the tweet was posted
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int tweet(int uid, int tid, int timestamp)
+{
+	user_t * iterator;
+	user_t * prev;
+	user_t * temp_iterator;
+	user_t * min;
+	user_t * temp_min;
+	user_t * max;
+	user_t * print_u;
+	tweet_t * temp;
+	tweet_t * temp1;
+	tweet_t * temp2;
+	tweet_t * temp3;
+	tweet_t * iterator_T;
+	tweet_t * previous;
+	tweet_t * inorderinput;
+	tweet_t * inOrderIterator;
+	tweet_t * inOrderPrevious;
+	tweet_t * inOrderTemp;
+	tweet_t * inOrderTemp1;
+	tweet_t * inOrderTemp2;
+	tweet_t * inOrderTemp3;
+	follower_t * iterator_f;
+	follower_t * traversal_in;
+	follower_t * minf;
+	follower_t * inordertemp;
+	follower_t * pre;
+
+
+	iterator=users_p;
+	prev=users_s;
+
+	while(iterator->uid!=-1){
+
+		if(uid==iterator->uid){
+			prev=iterator;
+			break;
+		}else if(uid<iterator->uid){
+			iterator=iterator->lc;
+		}else if(uid>iterator->uid){
+			iterator=iterator->rc;
+		}
+	}
+
+	if(prev->uid==-1){
+		printf("No user with that uid in the tree\n");
+		return 0;
+	}
+
+	iterator_T=prev->wall_head;
+	previous=NULL;
+	temp2=prev->wall_head;
+	temp3=NULL;
+
+
+	while(iterator_T!=NULL){
+
+		if(iterator_T->tid==tid){
+			printf("The follower with the particular uid is already in the tree\n");
+			return 0;
+		}
+
+		previous=iterator_T;
+		if(timestamp<iterator_T->timestamp){
+			iterator_T=iterator_T->lc;
+		}else if(timestamp>iterator_T->timestamp){
+			iterator_T=iterator_T->rc;
+		}
+
+	}
+
+	temp1=malloc(sizeof(tweet_t));
+	temp1->tid=tid;
+	temp1->uid=uid;
+	temp1->timestamp=timestamp;
+	temp1->rc=NULL;
+	temp1->lc=NULL;
+
+	while(temp2!=NULL){
+		temp3=temp2;
+		temp2=temp2->lc;
+	}
+
+
+	if(previous==NULL){
+		prev->wall_head=temp1;
+		prev->wall_head->next=NULL;
+	}else if(timestamp<previous->timestamp){
+		previous->lc=temp1;
+		temp=malloc(sizeof(tweet_t));
+		temp->tid=previous->tid;
+		temp->uid=previous->uid;
+		temp->timestamp=previous->timestamp;
+		temp->lc=NULL;
+		temp->rc=NULL;
+		previous->rc=temp;
+		previous->uid=temp1->uid;
+		previous->tid=temp1->tid;
+		previous->timestamp=temp1->timestamp;
+		previous->lc->next=previous->rc;
+		previous->rc->next=previous->next;
+	}else if(timestamp>previous->timestamp){
+		previous->rc=temp1;
+		temp=malloc(sizeof(tweet_t));
+		temp->tid=previous->tid;
+		temp->uid=previous->uid;
+		temp->timestamp=previous->timestamp;
+		temp->lc=NULL;
+		temp->rc=NULL;
+		previous->lc=temp;
+		previous->uid=temp1->uid;
+		previous->tid=temp1->tid;
+		previous->timestamp=temp1->timestamp;
+		previous->lc->next=previous->rc;
+		previous->rc->next=previous->next;
+
+		if(temp3->next!=NULL){
+			(temp3->next)->next=previous->lc;
+		}else{
+			temp3->next=previous->lc;
+		}
+	}
+
+	temp_iterator=users_p;
+	traversal_in=prev->followers;
+
+	while(temp_iterator->uid!=-1){
+		min=temp_iterator;
+		temp_iterator=temp_iterator->lc;
+	}
+
+	temp_min=min;
+
+	while(traversal_in!=NULL){
+		if(traversal_in->lc==NULL){
+			inordertemp=traversal_in;
+			traversal_in=traversal_in->rc;
+
+			while(min->uid!=inordertemp->uid){
+				min=inOrderSuccessorU(users_p,min);
+			}
+
+			inOrderIterator=min->wall_head;
+			inOrderPrevious=NULL;
+			inOrderTemp2=min->wall_head;
+			inOrderTemp3=NULL;
+
+			while(inOrderIterator!=NULL){
+
+			if(inOrderIterator->tid==tid){
+				printf("The follower with the particular uid is already in the tree\n");
+				return 0;
+			}	
+
+			inOrderPrevious=inOrderIterator;
+			if(timestamp<inOrderIterator->timestamp){
+				inOrderIterator=inOrderIterator->lc;
+			}else if(timestamp>inOrderIterator->timestamp){
+				inOrderIterator=inOrderIterator->rc;
+			}
+
+			}
+
+			inOrderTemp1=malloc(sizeof(tweet_t));
+			inOrderTemp1->tid=tid;
+			inOrderTemp1->uid=uid;
+			inOrderTemp1->timestamp=timestamp;
+			inOrderTemp1->rc=NULL;
+			inOrderTemp1->lc=NULL;
+
+		while(inOrderTemp2!=NULL){
+			inOrderTemp3=inOrderTemp2;
+			inOrderTemp2=inOrderTemp2->lc;
+		}
+
+		if(inOrderPrevious==NULL){
+		min->wall_head=inOrderTemp1;
+		min->wall_head->next=NULL;
+	}else if(timestamp<inOrderPrevious->timestamp){
+		inOrderPrevious->lc=inOrderTemp1;
+		inOrderTemp=malloc(sizeof(tweet_t));
+		inOrderTemp->tid=inOrderPrevious->tid;
+		inOrderTemp->uid=inOrderPrevious->uid;
+		inOrderTemp->timestamp=inOrderPrevious->timestamp;
+		inOrderTemp->lc=NULL;
+		inOrderTemp->rc=NULL;
+		inOrderPrevious->rc=inOrderTemp;
+		inOrderPrevious->uid=inOrderTemp1->uid;
+		inOrderPrevious->tid=inOrderTemp1->tid;
+		inOrderPrevious->timestamp=inOrderTemp1->timestamp;
+		inOrderPrevious->lc->next=inOrderPrevious->rc;
+		inOrderPrevious->rc->next=inOrderPrevious->next;
+	}else if(timestamp>inOrderPrevious->timestamp){
+		inOrderPrevious->rc=inOrderTemp1;
+		inOrderTemp=malloc(sizeof(tweet_t));
+		inOrderTemp->tid=inOrderPrevious->tid;
+		inOrderTemp->uid=inOrderPrevious->uid;
+		inOrderTemp->timestamp=inOrderPrevious->timestamp;
+		inOrderTemp->lc=NULL;
+		inOrderTemp->rc=NULL;
+		inOrderPrevious->lc=inOrderTemp;
+		inOrderPrevious->uid=inOrderTemp1->uid;
+		inOrderPrevious->tid=inOrderTemp1->tid;
+		inOrderPrevious->timestamp=inOrderTemp1->timestamp;
+		inOrderPrevious->lc->next=inOrderPrevious->rc;
+		inOrderPrevious->rc->next=inOrderPrevious->next;
+
+		if(inOrderTemp3->next!=NULL){
+			(inOrderTemp3->next)->next=inOrderPrevious->lc;
+		}else{
+			inOrderTemp3->next=inOrderPrevious->lc;
+		}
+	}
+
+	min=temp_min;
+
+		}else{
+			pre=traversal_in->lc;
+			while(pre->rc!=NULL && pre->rc!=traversal_in){
+				pre=pre->rc;
+			}
+
+			if(pre->rc==NULL){
+				pre->rc=traversal_in;
+				traversal_in=traversal_in->lc;
+			}else{
+				pre->rc=NULL;
+				inordertemp=traversal_in;
+				traversal_in=traversal_in->rc;
+				while(min->uid!=inordertemp->uid){
+				min=inOrderSuccessorU(users_p,min);
+			}
+
+			inOrderIterator=min->wall_head;
+			inOrderPrevious=NULL;
+			inOrderTemp2=min->wall_head;
+			inOrderTemp3=NULL;
+
+			while(inOrderIterator!=NULL){
+
+			if(inOrderIterator->tid==tid){
+				printf("The follower with the particular uid is already in the tree\n");
+				return 0;
+			}	
+
+			inOrderPrevious=inOrderIterator;
+			if(timestamp<inOrderIterator->timestamp){
+				inOrderIterator=inOrderIterator->lc;
+			}else if(timestamp>inOrderIterator->timestamp){
+				inOrderIterator=inOrderIterator->rc;
+			}
+
+			}
+
+			inOrderTemp1=malloc(sizeof(tweet_t));
+			inOrderTemp1->tid=tid;
+			inOrderTemp1->uid=uid;
+			inOrderTemp1->timestamp=timestamp;
+			inOrderTemp1->rc=NULL;
+			inOrderTemp1->lc=NULL;
+
+		while(inOrderTemp2!=NULL){
+			inOrderTemp3=inOrderTemp2;
+			inOrderTemp2=inOrderTemp2->lc;
+		}
+
+		if(inOrderPrevious==NULL){
+		min->wall_head=inOrderTemp1;
+		min->wall_head->next=NULL;
+	}else if(timestamp<inOrderPrevious->timestamp){
+		inOrderPrevious->lc=inOrderTemp1;
+		inOrderTemp=malloc(sizeof(tweet_t));
+		inOrderTemp->tid=inOrderPrevious->tid;
+		inOrderTemp->uid=inOrderPrevious->uid;
+		inOrderTemp->timestamp=inOrderPrevious->timestamp;
+		inOrderTemp->lc=NULL;
+		inOrderTemp->rc=NULL;
+		inOrderPrevious->rc=inOrderTemp;
+		inOrderPrevious->uid=inOrderTemp1->uid;
+		inOrderPrevious->tid=inOrderTemp1->tid;
+		inOrderPrevious->timestamp=inOrderTemp1->timestamp;
+		inOrderPrevious->lc->next=inOrderPrevious->rc;
+		inOrderPrevious->rc->next=inOrderPrevious->next;
+	}else if(timestamp>inOrderPrevious->timestamp){
+		inOrderPrevious->rc=inOrderTemp1;
+		inOrderTemp=malloc(sizeof(tweet_t));
+		inOrderTemp->tid=inOrderPrevious->tid;
+		inOrderTemp->uid=inOrderPrevious->uid;
+		inOrderTemp->timestamp=inOrderPrevious->timestamp;
+		inOrderTemp->lc=NULL;
+		inOrderTemp->rc=NULL;
+		inOrderPrevious->lc=inOrderTemp;
+		inOrderPrevious->uid=inOrderTemp1->uid;
+		inOrderPrevious->tid=inOrderTemp1->tid;
+		inOrderPrevious->timestamp=inOrderTemp1->timestamp;
+		inOrderPrevious->lc->next=inOrderPrevious->rc;
+		inOrderPrevious->rc->next=inOrderPrevious->next;
+
+			if(inOrderTemp3->next!=NULL){
+				(inOrderTemp3->next)->next=inOrderPrevious->lc;
+			}else{
+				inOrderTemp3->next=inOrderPrevious->lc;
+			}
+		}
+
+			}
+		}
+	}
+
+
+	
+
+
+		print_u=users_p;
+		printT(print_u);
+		printf("\n");
+
+	
+
+	return 1;
+}
+
+/**
+ * @brief User uid1 stopped following user uid2
+ *
+ * @param uid1 The 1st user's id
+ * @param uid2 The 2nd user's id
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int unsubscribe(int uid1, int uid2)
+{
+	user_t * iterator;
+        user_t * prev;
+        follower_t * temp;
+        follower_t * previous;
+        follower_t * tempF;
+        follower_t * print;
+	follower_t * replacement;
+	follower_t * parent_replacement;
+	follower_t * pointer;
+	int left;
+
+
+        iterator=users_p;
+        prev=users_s;
+
+        while(iterator->uid!=-1){
+
+                if(uid1==iterator->uid){
+                        prev=iterator;
+                        break;
+                }else if(uid1<iterator->uid){
+                        iterator=iterator->lc;
+                }else if(uid1>iterator->uid){
+                        iterator=iterator->rc;
+                }
+        }
+
+        if(prev->uid==-1){
+                printf("No user with that uid in the tree\n");
+                return 0;
+        }
+
+	temp=prev->followers;
+
+	while(temp!=NULL){
+		
+		if(uid2==temp->uid){
+			previous=temp;
+			break;
+		}else if(uid2 < temp->uid){
+			temp=temp->lc;
+		}else if(uid2 > temp->uid){
+			temp=temp->rc;
+		}
+	}
+
+	if(temp==NULL){
+		printf("No follower with that uid\n");
+		return 0;
+	}
+	pointer=prev->followers;
+	parent_replacement=pointer;
+	replacement=pointer->lc;
+	left=1;
+
+
+	if(previous->lc==NULL && previous->rc==NULL){
+		if(previous==prev->followers){
+			free(prev_followers);
+			prev->followers=NULL;
+		}else{
+			free(previous);
+			previous=NULL;
+		}	
+	}else if(previous->lc==NULL){
+		 if(previous==prev->followers){
+                        free(prev_followers);
+                        prev->followers=NULL;
+                }else{
+                        free(previous);
+                        previous=NULL;
+                }
+
+		tempF=previous;
+		previous=previous->rc;
+		free(tempF);
+	}else if(previous->rc==NULL){
+		tempF=previous;
+		previous=previous->lc;
+		free(tempF);
+	}else{
+		 while(replacement->rc!=NULL){
+                	parent_replacement=replacement;
+                	replacement=replacement->rc;
+			left==0;
+        	}
+		previous->uid=replacement->uid;
+		if(left==1){
+			pointer->lc=replacement->lc;
+			free(replacement);	
+		}else{
+			parent_replacement->rc=replacement->lc;
+		}	free(replacement);	
+	}
+
+	print=prev->followers;
+	printF(print);
+	printf("\n");
+
+	return 1;
+}
+
+/**
+ * @brief Delete user account
+ * 
+ * @param uid The id of the user account to delete
+ * 
+ * @return 1 on success
+ *         0 on failure
+ */
+int delete_user(int uid)
+{
+	return 1;
+}
+
+/**
+ * @brief Get the history of the user tweets
+ *
+ * @param uid The id of the user account
+ * 
+ * @return  1 on success
+ *          0 on failure
+ */
+int history(int uid, int timestamp1, int timestamp2)
+{
+    return 1;
+}
+
+/**
+ * @brief Lookup tweet the tweets hash table.
+ * 
+ * @param tid The tweet's id
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int lookup(int tid)
+{
+	return 1;
+}
+
+/**
+ * @brief Print all active users
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int print_users(void)
+{
+	return 1;
+}
+
+/**
+ * @brief Print all tagged tweets
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int print_tweets(void)
+{
+	return 1;
+}
+
+/**
+ * @brief Free resources
+ *
+ * @return 1 on success
+ *         0 on failure
+ */
+int free_all(void)
+{
+	return 1;
+}
+
+
+user_t * inOrderSuccessorU(user_t * root,user_t * pointer){
+
+	user_t * temp;
+	user_t * iterator;
+	user_t * prev;
+
+	temp=users_s;
+
+	if(pointer->rc->uid!=-1){
+		temp=pointer->rc;
+		while(temp->lc->uid!=-1){
+			temp=temp->lc;
+		}
+	}else{
+		iterator=root;
+		while(iterator->uid!=pointer->uid){
+			if(pointer->uid<=iterator->uid){
+				temp=iterator;
+				iterator=iterator->lc;
+			}else{
+				iterator=iterator->rc;
+			}
+		}
+
+	}
+
+	return temp;
+
+}
+
+follower_t * inOrderSuccessorF(follower_t * root,follower_t * pointer){
+
+	follower_t * temp;
+	follower_t * iterator;
+	follower_t * prev;
+
+	temp=NULL;
+
+	if(pointer->rc!=NULL){
+		temp=pointer->rc;
+		while(temp->lc!=NULL){
+			temp=temp->lc;
+		}
+	}else{
+		iterator=root;
+		while(iterator->uid!=pointer->uid){
+			if(pointer->uid<=iterator->uid){
+				temp=iterator;
+				iterator=iterator->lc;
+			}else{
+				iterator=iterator->rc;
+			}
+		}
+
+	}
+
+	return temp;
+
+}
+
+
+int printR(user_t * root){
+
+	if(root==NULL || root->uid==-1){ 
+		return 0;
+	}
+
+	printR(root->lc);
+	printf("%d ",root->uid);
+	printR(root->rc);
+
+	return 1;
+}
+
+int printF(follower_t * root){
+
+	if(root==NULL){
+		return 0;
+	}
+
+	printF(root->lc);
+	printf("%d ",root->uid);
+	printF(root->rc);
+
+	return 1;
+}
+
+int printT(user_t * root_t){
+
+	tweet_t * iterator;
+	tweet_t * temp;
+	tweet_t * root;
+
+
+
+	if(root_t==NULL || root_t->uid==-1){ 
+		return 0;
+	}
+
+	printT(root_t->lc);
+	printf("%d :",root_t->uid);
+	root=root_t->wall_head;
+	if(root!=NULL){
+	
+
+		while(root!=NULL){
+			iterator=root;
+			root=root->lc;
+		}
+
+		printf("%d ",iterator->timestamp);
+		temp=iterator->next;
+		while(temp!=NULL){
+			printf("%d ",temp->timestamp);
+			temp=temp->next;
+		}
+	}
+	printf("\n");
+	printT(root_t->rc);
+
+	return 1;
+}
+
+
