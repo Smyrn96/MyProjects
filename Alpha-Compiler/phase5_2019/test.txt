@@ -1,0 +1,7 @@
+function mult() {
+	return 10*10;
+}
+x = 10;
+print(x," multiplied by 10 equals: ", mult(),"\n");
+
+print(x," + 20 equals: ", x+20,"\n");

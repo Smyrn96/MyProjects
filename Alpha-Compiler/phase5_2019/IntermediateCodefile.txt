@@ -1,0 +1,27 @@
+
+----------Intermediate code----------
+0: JUMP 6 [line: 1]
+1: FUNC_START mult [line: 0]
+2: MUL _t0 10.000000 10.000000 [line: 0]
+3: RETURN _t0 [line: 0]
+4: JUMP 5 [line: 0]
+5: FUNC_END mult [line: 3]
+6: ASSIGN x 10 [line: 4]
+7: ASSIGN _t0 x  [line: 0]
+8: CALL mult  [line: 5]
+9: GETRETVAL  _t0 [line: 0]
+10: PARAM "
+" [line: 0]
+11: PARAM _t0 [line: 0]
+12: PARAM " multiplied by 10 equals: " [line: 0]
+13: PARAM x [line: 0]
+14: CALL print  [line: 0]
+15: GETRETVAL  _t1 [line: 0]
+16: ADD _t0 x 20.000000 [line: 7]
+17: PARAM "
+" [line: 0]
+18: PARAM _t0 [line: 0]
+19: PARAM " + 20 equals: " [line: 0]
+20: PARAM x [line: 0]
+21: CALL print  [line: 0]
+22: GETRETVAL  _t1 [line: 0]
