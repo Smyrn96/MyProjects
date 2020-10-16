@@ -1,0 +1,57 @@
+.left {
+  border-radius: 10px;
+  width: 450px;
+  position: relative;
+  left: 160px;
+  top: 130px;
+  background-color: white;
+}
+
+.title {
+  padding-top: 2%;
+  margin-left: 3%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.content {
+  margin-bottom: 1%;
+  margin-left: 4%;
+  font-size: 25px;
+  padding-bottom: 3%;
+}
+.center {
+  border-radius: 10px;
+  width: 700px;
+  height: auto;
+  position: relative;
+  left: 180px;
+  top: 130px;
+  background-color: white;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.dummy {
+  flex: 0 0 320px;
+}
+
+.right {
+  border-radius: 10px;
+  width: 500px;
+  position: relative;
+  left: 200px;
+  top: 130px;
+  background-color: white;
+}
+.main {
+  display: flex;
+}
+.MonitorTask {
+  position: relative;
+  left: 850px;
+  top: 130px;
+  font-weight: bold;
+  color: white;
+}

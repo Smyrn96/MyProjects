@@ -1,0 +1,146 @@
+.TopBar,
+.rightSide {
+  display: flex;
+}
+.rightSide {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+}
+.LogoANDName {
+  position: fixed;
+  top: 10px;
+  left: 40px;
+  width: 393px;
+  display: flex;
+}
+.sword {
+  color: white;
+  height: 60px;
+  width: 60px;
+  margin-left: 15%;
+  margin-top: 15%;
+}
+
+.LogoName {
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-left: 8%;
+  padding-top: 2%;
+}
+.Logo {
+  width: 85px;
+  height: 85px;
+  background: #011f4b;
+  background-size: cover;
+  border-radius: 50px;
+  flex: 1;
+}
+.LanguageImage {
+  width: 25px;
+  height: 25px;
+  flex: 1;
+}
+
+.SignUp {
+  padding-left: 10%;
+  margin-top: -3%;
+}
+#sign {
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+}
+
+.MainGrid {
+  border-radius: 2%;
+  padding: 10px;
+  width: 500px;
+  height: 800px;
+  background-color: white;
+  position: fixed;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.LoginTitle {
+  text-align: center;
+  font-size: 48px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.username {
+  margin-left: 12%;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.password,
+.confirm,
+.avatar {
+  margin-left: 12%;
+  margin-top: 5%;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.email {
+  margin-left: 12%;
+  margin-top: 1%;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.a input {
+  font-size: 15px;
+  margin-left: 12%;
+}
+
+.password input,
+.confirm input,
+.email input {
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: 360px;
+  height: 40px;
+}
+
+.username input {
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: 360px;
+  height: 40px;
+}
+.submit {
+  width: 260px;
+  height: 50px;
+  margin-left: 25%;
+  margin-top: 15%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+  border-radius: 8px;
+  color: white;
+}
+
+.warning {
+  margin-left: 13%;
+  color: red;
+  font-weight: bold;
+  visibility: hidden;
+}
+.pop {
+  margin-top: 5%;
+  margin-left: 13%;
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  visibility: hidden;
+}

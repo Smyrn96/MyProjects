@@ -1,0 +1,68 @@
+.box {
+  position: relative;
+  top: 60px;
+  left: 180px;
+  flex: 0 0 320px;
+  height: 440px;
+  background-color: #011f4b;
+  border-radius: 5px;
+  margin-right: 2%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.category {
+  text-align: center;
+  background-color: #6497b1;
+  color: white;
+  font-size: 22px;
+}
+.box .flash {
+  width: 180px;
+  margin-top: 25%;
+  margin-left: 3%;
+}
+
+.userRow {
+  display: flex;
+  position: relative;
+  top: -88px;
+  background-color: #6497b1;
+  height: 24px;
+  line-height: 24px;
+}
+.User1 {
+  color: white;
+  margin-left: 8%;
+  font-size: 12px;
+}
+.User2 {
+  color: white;
+  margin-left: 30%;
+  font-size: 12px;
+}
+.attacker img {
+  width: 80px;
+  margin-bottom: 1%;
+}
+
+.defender img {
+  width: 80px;
+  margin-bottom: 0.5%;
+}
+
+.attacker {
+  display: block;
+  color: white;
+  position: relative;
+  left: -90px;
+  top: -40px;
+}
+.defender {
+  display: block;
+  color: white;
+  position: relative;
+  top: -330px;
+  left: 100px;
+}

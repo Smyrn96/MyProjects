@@ -1,0 +1,56 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+.tabs {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  width: 60%;
+  top: 15%;
+  left: 20%;
+}
+
+.Spectate h1 {
+  color: white;
+  pointer-events: auto;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+.MainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 1200px;
+  height: 320px;
+  background-color: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.row {
+  list-style: none;
+  display: flex;
+  align-content: flex-start;
+  width: 1200px;
+  margin-left: -3%;
+  margin-top: 1%;
+}
+.row li {
+  margin-right: 0.5%;
+}
+
+::-webkit-scrollbar {
+  height: 8px; /* height of horizontal scrollbar ← You're missing this */
+  width: 10px; /* width of vertical scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #011f4b;
+  border-radius: 5px;
+}

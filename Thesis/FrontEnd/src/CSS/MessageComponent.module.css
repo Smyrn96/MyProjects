@@ -1,0 +1,351 @@
+.id {
+  color: gray;
+  font-size: 22px;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.contentNtag {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+.contentNtagSpec {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+.content {
+  width: 320px;
+  padding: 1%;
+  font-size: 23px;
+  border-radius: 5px;
+  height: auto;
+  background-color: #cccccc;
+}
+.imageD {
+  display: flex;
+}
+.image1 {
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.id2 {
+  position: relative;
+  left: 390px;
+  color: gray;
+  font-size: 22px;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.contentNtagSpec2 {
+  position: relative;
+  left: 450px;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+.contentNtag2 {
+  position: relative;
+  left: 350px;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+.content2 {
+  margin-left: -58px;
+  width: 320px;
+  padding: 1%;
+  font-size: 23px;
+  border-radius: 5px;
+  height: auto;
+  background-color: #00c6ff;
+}
+.imageD2 {
+  padding-right: 1%;
+  display: flex;
+  width: 100px;
+  position: relative;
+  right: 60px;
+}
+.image2 {
+  position: absolute;
+  left: 60px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.pencil2 {
+  position: absolute;
+  right: 50px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.pencil {
+  margin-left: 8px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+  margin-top: 3%;
+}
+.context {
+  width: 220px;
+  word-wrap: break-word;
+  padding: 1%;
+  font-size: 20px;
+  border-radius: 5px;
+  height: auto;
+  background-color: #cccccc;
+  margin-left: 5%;
+}
+
+.select {
+  position: relative;
+  right: -35px;
+  top: 11px;
+  margin-left: 5%;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.selection {
+  margin-left: 17%;
+  margin-top: 1%;
+  font-size: 20px;
+  font-weight: bold;
+}
+.plus {
+  width: 150px;
+  margin-left: 50%;
+  display: flex;
+  margin-top: 2%;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+.plus div {
+  width: 180px;
+  margin-left: 4%;
+  font-size: 20px;
+  color: grey;
+}
+.plus img {
+  width: 25px;
+  height: 25px;
+  margin-top: 0.5%;
+}
+
+.minus div {
+  width: 180px;
+  margin-left: 5%;
+  font-size: 20px;
+  color: grey;
+}
+.minus {
+  width: 180px;
+  margin-left: 3%;
+  display: flex;
+  margin-top: 2%;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+.minus img {
+  margin-top: 7%;
+  width: 25px;
+  height: 4px;
+  opacity: 70%;
+}
+
+.editTags {
+  display: flex;
+}
+
+.cancel {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+.sumbit {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+.footer {
+  display: flex;
+  position: relative;
+  left: 500px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.singleTag1 {
+  font: 20px;
+  color: black;
+  position: relative;
+  left: 40px;
+  top: 10px;
+}
+
+.singleTag2 {
+  font: 20px;
+  color: #011f4b;
+  position: relative;
+  left: 435px;
+  top: 10px;
+}
+
+.delete {
+  visibility: visible;
+  margin-left: 60px;
+  margin-top: 11px;
+  cursor: pointer;
+}
+
+.rate2 {
+  margin-left: 54%;
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+
+.rate2:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate2:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate2:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate2 > input:checked ~ label {
+  color: #ffc700;
+}
+.rate2:not(:checked) > label:hover,
+.rate2:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate2 > input:checked + label:hover,
+.rate2 > input:checked + label:hover ~ label,
+.rate2 > input:checked ~ label:hover,
+.rate2 > input:checked ~ label:hover ~ label,
+.rate2 > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.rate {
+  margin-left: 4%;
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.rateB {
+  margin-top: 1%;
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 2%;
+  background-color: #011f4b;
+  color: white;
+  font-size: 18px;
+}
+
+.stars {
+  font-size: 30px;
+}
+.box1 {
+  margin-top: -30px;
+  margin-left: 35.5%;
+  border: 2px solid #011f4b;
+  width: 50px;
+  height: 30px;
+  border-radius: 8px;
+}
+.box1 span {
+  padding-left: 25%;
+}
+
+.box2 {
+  margin-top: -30px;
+  margin-left: 85.5%;
+  border: 2px solid #011f4b;
+  width: 50px;
+  height: 30px;
+  border-radius: 8px;
+}
+.box2 span {
+  padding: 25%;
+}
+
+.image {
+  margin-left: 46%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+.description {
+  font-size: 20px;
+  margin-left: 15%;
+  margin-bottom: 2%;
+}

@@ -1,0 +1,192 @@
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(0deg, #011f4b, #6497b1 80%) no-repeat;
+}
+
+.TopBar,
+.rightSide {
+  display: flex;
+}
+.rightSide {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+}
+.LogoANDName {
+  position: fixed;
+  top: 10px;
+  left: 40px;
+  width: 393px;
+  display: flex;
+}
+.sword {
+  color: white;
+  height: 60px;
+  width: 60px;
+  margin-left: 15%;
+  margin-top: 15%;
+}
+
+.LogoName {
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-left: 8%;
+  padding-top: 2%;
+}
+.Logo {
+  width: 85px;
+  height: 85px;
+  background: #011f4b;
+  background-size: cover;
+  border-radius: 50px;
+  flex: 1;
+}
+.LanguageImage {
+  width: 25px;
+  height: 25px;
+  flex: 1;
+}
+
+.SignUp {
+  padding-left: 10%;
+  margin-top: -3%;
+}
+#sign {
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+}
+
+.MainGrid {
+  border-radius: 2%;
+  padding: 10px;
+  width: 500px;
+  height: 650px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.LoginTitle {
+  text-align: center;
+  font-size: 48px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Username {
+  font-size: 16px;
+  margin-left: 14%;
+  margin-top: 2 %;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+.usernameInput {
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: 360px;
+  height: 40px;
+  margin-top: 1%;
+  margin-left: 14%;
+}
+
+.Password {
+  font-size: 16px;
+
+  margin-left: 14%;
+  margin-top: 5%;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+.passwordInput {
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: 360px;
+  height: 40px;
+  margin-top: 1%;
+  margin-left: 14%;
+  margin-bottom: 5%;
+}
+
+.Remember {
+  margin-top: -5%;
+  margin-left: 14%;
+  font-size: 16px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: -4.8%;
+}
+
+.RememberInput {
+  margin-left: 41%;
+  border: none;
+  background-color: #e6e6e6;
+}
+.Forgot {
+  font-size: 16px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  margin-top: -5%;
+  margin-left: 51%;
+}
+#login {
+  width: 260px;
+  height: 50px;
+  margin-left: 25%;
+  margin-top: 15%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+}
+.NewUser {
+  font-size: 16px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 34%;
+  margin-top: 2%;
+}
+.a:link {
+  font-family: "Montserrat", sans-serif;
+  color: blue;
+}
+
+.pop {
+  visibility: hidden;
+  position: relative;
+  top: 0px;
+  left: 65px;
+  border-radius: 10px;
+  border: none;
+  color: red;
+  width: 360px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.RoleTitle {
+  font-size: 16px;
+  margin-left: 14%;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+.role {
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: auto;
+  height: 40px;
+  margin-top: 1%;
+  margin-left: 14%;
+  margin-bottom: 10%;
+}

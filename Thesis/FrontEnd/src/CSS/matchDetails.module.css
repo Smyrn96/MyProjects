@@ -1,0 +1,279 @@
+.title h1 {
+  color: white;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 8%;
+  left: 42%;
+}
+
+.roleTitle {
+  width: 850px;
+  background-color: #011f4b;
+  color: white;
+  margin-left: -10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: -10px;
+  height: 60px;
+  vertical-align: center;
+  display: flex;
+}
+
+.attacker {
+  margin-left: 17%;
+  margin-top: 15px;
+  font-size: 20px;
+}
+.defender {
+  margin-left: 45%;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.mainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 850px;
+  height: 820px;
+  background-color: white;
+  position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.username {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.attackerUsername {
+  position: absolute;
+  left: 120px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.usernameTitle {
+  position: absolute;
+  left: 270px;
+  margin-left: 13%;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderUsername {
+  position: absolute;
+  right: 120px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.Points {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.attackerPoints {
+  position: absolute;
+  left: 160px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.pointsTitle {
+  position: absolute;
+  left: 185px;
+  margin-left: 25%;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderPoints {
+  position: absolute;
+  right: 190px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.Messages {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.attackerMessages {
+  position: absolute;
+  left: 160px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.messagesTitle {
+  position: absolute;
+  left: 380px;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderMessages {
+  position: absolute;
+  right: 190px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.Tags {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.attackerTags {
+  position: absolute;
+  left: 160px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.tagsTitle {
+  position: absolute;
+  left: 400px;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderTags {
+  position: absolute;
+  right: 190px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.Matching {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.matchingAttacker {
+  position: absolute;
+  left: 160px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.matchingTitle {
+  position: absolute;
+  left: 360px;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.matchingDefender {
+  position: absolute;
+  right: 190px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.earning {
+  width: 850px;
+  border-bottom: 1px solid black;
+  margin-left: -10px;
+  height: 100px;
+  display: flex;
+}
+.earningAttacker {
+  position: absolute;
+  left: 150px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.earningTitle {
+  position: absolute;
+  left: 375px;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.earningDefender {
+  position: absolute;
+  right: 190px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.matchXP {
+  width: 850px;
+  margin-left: -10px;
+  border-bottom: 1px solid black;
+  height: 100px;
+  display: flex;
+}
+.attackerXP {
+  position: absolute;
+  left: 150px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+.titleXP {
+  position: absolute;
+  left: 380px;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderXP {
+  position: absolute;
+  right: 180px;
+  margin-top: 5%;
+  font-size: 18px;
+}
+
+.total {
+  width: 850px;
+  margin-left: -10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 60px;
+  display: flex;
+  background-color: #6497b1;
+}
+.attackerTotal {
+  position: absolute;
+  left: 160px;
+  margin-top: 2.5%;
+  font-size: 18px;
+}
+.totalTitle {
+  position: absolute;
+  left: 400px;
+  margin-top: 2.5%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.defenderTotal {
+  position: absolute;
+  right: 190px;
+  margin-top: 2.5%;
+  font-size: 18px;
+}
+
+.titleModal {
+  text-align: center;
+  margin-top: 1%;
+}
+.imageTick {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: 375px;
+}
+.cont {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}

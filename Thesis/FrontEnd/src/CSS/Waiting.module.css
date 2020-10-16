@@ -1,0 +1,55 @@
+.MainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+}
+
+.title {
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title:after {
+  display: inline-block;
+  animation: dotty steps(1, end) 2s infinite;
+  content: "";
+}
+
+@keyframes dotty {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+.stats {
+  font-size: 25px;
+  list-style: none;
+  margin-top: 8%;
+  text-align: center;
+}
+.stats li {
+  padding-top: 5%;
+}

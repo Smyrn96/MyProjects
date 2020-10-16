@@ -1,0 +1,204 @@
+.MainGrid {
+  position: fixed;
+  top: 9%;
+  left: 10%;
+  width: 1500px;
+  background-color: white;
+  height: 900px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.topLeft {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 710px;
+  height: 450px;
+  background-color: #011f4b;
+  border-top-left-radius: 8px;
+  border-bottom: 1px solid white;
+}
+.botLeft {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 710px;
+  height: 450px;
+  background-color: #6497b1;
+  border-bottom-left-radius: 8px;
+}
+.Task {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 50px;
+  left: 100px;
+  font-weight: bold;
+}
+
+.Role {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 60px;
+  left: 128px;
+}
+.Description {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 70px;
+  left: 128px;
+  width: 500px;
+}
+.Category {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 80px;
+  left: 128px;
+  width: 500px;
+}
+
+.Hints {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 90px;
+  left: 100px;
+  font-weight: bold;
+}
+
+.guide {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 100px;
+  left: 110px;
+  width: 500px;
+}
+.hints {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 20px;
+  width: 500px;
+}
+
+.timer {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 95px;
+  left: 130px;
+  width: 500px;
+}
+.info {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 70px;
+  left: 100px;
+  font-weight: bold;
+}
+.total {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 75px;
+  left: 120px;
+  width: 500px;
+}
+
+.chatSide {
+  width: 790px;
+  height: 828px;
+  background-color: white;
+  position: relative;
+  left: 710px;
+  top: -900px;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.pad {
+  height: 65px;
+  position: fixed;
+  top: 926px;
+  left: 903px;
+  border-bottom-right-radius: 6px;
+  display: flex;
+  width: 790px;
+  border-top: 1px solid gray;
+}
+.type {
+  border: none;
+  margin-left: 5%;
+  margin-top: 0.1%;
+  height: 62px;
+  font-size: 22px;
+  padding-top: 0%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.forfeit {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 12%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+
+.title {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.stars {
+  position: absolute;
+  left: 50px;
+  margin-top: -1%;
+  font-size: 30px;
+}
+
+.attackerTitle {
+  font-size: 25px;
+  margin-left: 12%;
+  width: 200px;
+}
+.line {
+  margin-top: 5%;
+  display: flex;
+}
+.footer {
+  margin-top: 5%;
+  margin-left: 55%;
+  margin-bottom: 2%;
+}
+.cancel {
+  margin-left: 5%;
+  background-color: #011f4b;
+  border-radius: 8px;
+  border: 1px solid #011f4b;
+  font-size: 18px;
+  color: white;
+  width: 90px;
+}
+.sumbit {
+  background-color: #011f4b;
+  border-radius: 8px;
+  border: 1px solid #011f4b;
+  font-size: 18px;
+  color: white;
+  width: 90px;
+}

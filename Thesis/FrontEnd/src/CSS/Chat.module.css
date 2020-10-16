@@ -1,0 +1,277 @@
+.MainGrid {
+  position: fixed;
+  top: 9%;
+  left: 10%;
+  width: 1500px;
+  background-color: white;
+  height: 900px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.topLeft {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 710px;
+  height: 500px;
+  background-color: #011f4b;
+  border-top-left-radius: 8px;
+  border-bottom: 1px solid white;
+}
+.botLeft {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 710px;
+  height: 400px;
+  background-color: #6497b1;
+  border-bottom-left-radius: 8px;
+}
+.Task {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 50px;
+  left: 100px;
+  font-weight: bold;
+}
+
+.Role {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 60px;
+  left: 128px;
+}
+.Description {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 70px;
+  left: 128px;
+  width: 500px;
+}
+.Category {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 80px;
+  left: 128px;
+  width: 500px;
+}
+
+.Hints {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 90px;
+  left: 100px;
+  font-weight: bold;
+}
+
+.guide {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 100px;
+  left: 110px;
+  width: 500px;
+}
+.hints {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 20px;
+  width: 500px;
+}
+
+.timer {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 95px;
+  left: 130px;
+  width: 500px;
+}
+.info {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: 70px;
+  left: 100px;
+  font-weight: bold;
+}
+.total {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 75px;
+  left: 120px;
+  width: 500px;
+}
+
+.list {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 75px;
+  left: 103px;
+  width: 500px;
+}
+
+.chatSide {
+  width: 790px;
+  height: 828px;
+  background-color: white;
+  position: relative;
+  left: 710px;
+  top: -900px;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.topText {
+  padding-top: 2%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pad {
+  height: 65px;
+  position: fixed;
+  top: 926px;
+  left: 903px;
+  border-bottom-right-radius: 6px;
+  display: flex;
+  width: 790px;
+  border-top: 1px solid gray;
+}
+.type {
+  border: none;
+  margin-left: 0%;
+  margin-top: 0.1%;
+  height: 62px;
+  font-size: 22px;
+  padding-top: 0%;
+  padding-left: 5%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.send {
+  width: 30px;
+  height: 30px;
+  margin-left: 4%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+.forfeit {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+.chatList {
+  list-style: none;
+  line-height: 40px;
+}
+
+.chatList span {
+  color: #011f4b;
+}
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3%;
+}
+.footer {
+  display: flex;
+  position: relative;
+  color: #011f4b;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.sumbit {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 27%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+.cancel {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 3%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+.cont {
+  font-size: 25px;
+  margin-bottom: 2%;
+  margin-left: 12%;
+}
+
+.end {
+  cursor: pointer;
+  text-align: center;
+  width: 480px;
+  position: relative;
+  top: 50px;
+  left: 150px;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  background-color: #011f4b;
+}
+.cont1 {
+  font-size: 25px;
+  margin-bottom: 2%;
+  margin-left: 8%;
+}
+
+.sumbit1 {
+  width: 100px;
+  height: 35px;
+  margin-top: 1.7%;
+  margin-left: 65%;
+  border-radius: 5px;
+  border: none;
+  background-color: #011f4b;
+  color: white;
+  font-size: 20px;
+}
+
+#spin {
+  position: relative;
+  left: 50%;
+}
+
+.reason {
+  padding-left: 3%;
+  border-radius: 10px;
+  border: none;
+  background-color: #e6e6e6;
+  width: 390px;
+  height: 100px;
+  margin-top: 1%;
+  margin-left: 11%;
+  margin-bottom: 10%;
+}

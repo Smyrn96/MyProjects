@@ -1,0 +1,66 @@
+.MainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 1200px;
+  height: 650px;
+  background-color: white;
+  position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+.tabs {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  width: 60%;
+  top: 15%;
+  left: 20%;
+}
+
+.Leaderboard h1 {
+  color: white;
+  pointer-events: auto;
+  font-weight: 900;
+}
+
+.TitleGrid {
+  width: 1199px;
+  border-radius: 2px;
+  margin-top: -0.6%;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 6px -6px gray;
+  -moz-box-shadow: 0 5px 6px -6px gray;
+  box-shadow: 0 5px 6px -6px gray;
+  margin-left: -0.8%;
+  height: 60px;
+}
+
+.TitleGrid span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: black;
+}
+.Options {
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  display: flex;
+  color: black;
+  font-size: 22px;
+  padding: 14px 16px;
+}
+
+.Options .Rating,
+.Badges {
+  margin-left: 34%;
+}
+.list {
+  margin-left: -3.5%;
+  list-style-type: none;
+}

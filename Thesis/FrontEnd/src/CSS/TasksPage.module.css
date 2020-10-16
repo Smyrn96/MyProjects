@@ -1,0 +1,21 @@
+.MainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 1000px;
+  height: 800px;
+  background-color: white;
+  position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+}
+
+.title {
+  position: absolute;
+  top: 100px;
+  left: 910px;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}

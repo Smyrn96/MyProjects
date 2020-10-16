@@ -1,0 +1,13 @@
+.Main {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: white;
+  text-align: center;
+  width: 150px;
+  border-radius: 8px;
+  border: 2px solid #011f4b;
+  position: relative;
+  left: -8px;
+  top: -40px;
+}

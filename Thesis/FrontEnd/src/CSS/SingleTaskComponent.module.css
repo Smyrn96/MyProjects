@@ -1,0 +1,40 @@
+.box {
+  width: 700px;
+  height: 180px;
+  margin-left: 15%;
+  margin-top: 2%;
+}
+
+li {
+  font-size: 22px;
+  margin-bottom: 3%;
+}
+
+.catBox {
+  display: inline-block;
+  padding: 1%;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+}
+.dateBox {
+  display: inline-block;
+  padding: 1%;
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 1%;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+}
+.More {
+  position: fixed;
+  right: 100px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 1.5%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+}

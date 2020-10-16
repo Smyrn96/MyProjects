@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+
+.TopBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.LogoAndTitle {
+  position: fixed;
+  top: 10px;
+  left: 40px;
+  width: 393px;
+  display: flex;
+}
+.sword {
+  color: white;
+  height: 60px;
+  width: 60px;
+  margin-left: 15%;
+  margin-top: 15%;
+}
+
+.LogoName {
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-left: 8%;
+  padding-top: 2%;
+}
+.Logo {
+  width: 85px;
+  height: 85px;
+  background: #011f4b;
+  background-size: cover;
+  border-radius: 50px;
+  flex: 1;
+}
+
+.Menu {
+  display: flex;
+  position: fixed;
+  right: 50px;
+  top: 13px;
+  list-style: none;
+}
+
+.Menu a,
+.User {
+  float: left;
+  padding: 14px 16px;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+.Menu li .Active {
+  border-bottom: 3px solid white;
+  padding-bottom: 8px;
+}
+
+.User img {
+  width: 32px;
+  height: 32px;
+  margin-right: 1%;
+}
+
+.Menu a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+nav .Menu li .active {
+  font-weight: 900;
+  border-bottom: 3px solid white;
+  padding-bottom: 8px;
+}
+
+.User {
+  display: flex;
+}
+.User div {
+  margin-left: 3%;
+}
+.dropdown {
+  display: none;
+  position: relative;
+  top: 55px;
+  left: 10%;
+  width: 150px;
+  height: 240px;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown .profile,
+.dropdown .settings,
+.dropdown .privacy,
+.dropdown .logout {
+  width: 150px;
+  height: 60px;
+}
+
+.profile {
+  position: relative;
+  top: -61px;
+  background-color: #011f4b;
+  left: -16px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.profile div {
+  margin-left: -10%;
+}
+.profile img {
+  width: 28px;
+}
+.settings img {
+  width: 28px;
+}
+.privacy img {
+  width: 28px;
+}
+.logout img {
+  width: 28px;
+}
+.profile .text {
+  color: white;
+  margin-left: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.settings {
+  position: relative;
+  top: -61px;
+  background-color: #011f4b;
+  left: -16px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.settings .text {
+  color: white;
+  margin-left: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+.privacy {
+  position: relative;
+  top: -61px;
+  background-color: #011f4b;
+  left: -16px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.privacy img {
+  margin-left: -7%;
+}
+
+.privacy .text {
+  color: white;
+  margin-left: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.logout {
+  position: relative;
+  top: -61px;
+  background-color: #011f4b;
+  left: -16px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.logout .text {
+  color: white;
+  margin-left: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+li:hover .dropdown {
+  display: block;
+}
+.dropdown a {
+  color: black;
+  font-size: 20px;
+  padding: 0;
+}
+.dropdown a:hover {
+  text-decoration: none;
+  color: black;
+}
+.profile {
+  cursor: pointer;
+}

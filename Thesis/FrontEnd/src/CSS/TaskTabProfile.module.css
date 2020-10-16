@@ -1,0 +1,118 @@
+.singleTab {
+  background-color: white;
+  margin-left: 0.5%;
+  width: 1560px;
+  height: 80px;
+  border: 1px solid gray;
+  margin-bottom: 2.5%;
+}
+.row {
+  display: flex;
+  width: 1465px;
+  padding-top: 0.5%;
+  margin-left: 1%;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.Username,
+.Defender,
+.Tags,
+.Rounds,
+.Time,
+.Category,
+.Phising .active {
+  width: 200px;
+  text-align: center;
+  margin-right: 4%;
+}
+.Date .titles {
+  margin-left: 45%;
+}
+
+.active .context {
+  margin-left: 115%;
+}
+.active .titles {
+  margin-left: 90%;
+}
+.titles {
+  font-weight: bold;
+}
+.activeTask {
+  border-radius: 10px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+  color: white;
+  width: 200px;
+  position: relative;
+  left: 940px;
+  top: 11px;
+  font-size: 22px;
+}
+.monitor {
+  border-radius: 10px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+  color: white;
+  width: 200px;
+  position: relative;
+  left: 950px;
+  top: 11px;
+  font-size: 22px;
+}
+.delete {
+  border-radius: 10px;
+  background-color: #011f4b;
+  border: 1px solid #011f4b;
+  color: white;
+  width: 200px;
+  position: relative;
+  left: 960px;
+  top: 11px;
+  font-size: 22px;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 3%;
+
+  margin-top: 2%;
+}
+
+.cont {
+  text-align: center;
+  font-size: 20px;
+}
+
+.footer {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.yes {
+  width: 100px;
+  margin-left: 49%;
+  border-radius: 10px;
+  border: 1px solid #011f4b;
+  background-color: #011f4b;
+  color: white;
+  font-size: 18px;
+}
+.cancel {
+  border-radius: 10px;
+  border: 1px solid #011f4b;
+  background-color: #011f4b;
+  color: white;
+  font-size: 18px;
+  margin-left: 2%;
+  width: 100px;
+}
+
+.image {
+  margin-left: 215px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  width: 70px;
+  height: 70px;
+}

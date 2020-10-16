@@ -1,0 +1,120 @@
+.tabs {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  width: 60%;
+  top: 15%;
+  left: 20%;
+}
+
+.Challenges h1 {
+  color: white;
+  pointer-events: auto;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+.MainGrid {
+  border-radius: 1%;
+  padding: 10px;
+  width: 1200px;
+  height: 650px;
+  background-color: white;
+  position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.TitleGrid {
+  width: 1199px;
+  border-radius: 2px;
+  margin-top: -1%;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 6px -6px gray;
+  -moz-box-shadow: 0 5px 6px -6px gray;
+  box-shadow: 0 5px 6px -6px gray;
+  margin-left: -0.8%;
+  height: 50px;
+}
+
+.Options div {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: black;
+  font-size: 22px;
+}
+.Options {
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  display: flex;
+  color: black;
+  vertical-align: middle;
+}
+.challenge {
+  margin-left: 20%;
+  margin-top: 1%;
+}
+.challengeInfo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+.challengeGrid {
+  display: flex;
+}
+.reward {
+  margin-left: 20%;
+  margin-top: 1.2%;
+  font-family: "Montserrat", sans-serif;
+}
+.reward h3 {
+  font-size: 22px;
+}
+.info {
+  margin-top: 22%;
+}
+
+.pr {
+  width: 400px;
+  height: 30px;
+  color: red;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 2%;
+}
+progress.pr::-webkit-progress-bar {
+  border-radius: 20px;
+  border: 1px solid #999999;
+  background-color: #efefef;
+}
+progress.pr::-webkit-progress-value {
+  background: #011f4b;
+  border-radius: 20px;
+}
+.percentage {
+  font-size: 22px;
+  color: black;
+  position: relative;
+  font-weight: 900;
+  left: 45%;
+  top: 48%;
+  margin-top: -8%;
+}
+.TitleGrid2 {
+  width: 1199px;
+  border-radius: 2px;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 6px -6px gray;
+  -moz-box-shadow: 0 5px 6px -6px gray;
+  box-shadow: 0 5px 6px -6px gray;
+  margin-left: -0.8%;
+  height: 50px;
+}
+
+.row {
+  list-style: none;
+}
+.gen {
+  list-style: none;
+}

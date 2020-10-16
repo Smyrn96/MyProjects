@@ -1,0 +1,31 @@
+.singleTab {
+  background-color: white;
+  margin-left: 0.5%;
+  width: 1480px;
+  height: 80px;
+  border: 1px solid gray;
+  margin-bottom: 0.2%;
+}
+.row {
+  display: flex;
+  width: 1480px;
+  padding-top: 0.5%;
+  margin-left: 4%;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.Username,
+.Defender,
+.Tags,
+.Rounds,
+.Time,
+.Category,
+.Phising,
+.Date {
+  width: 120px;
+  text-align: center;
+  margin-right: 8%;
+}
+.titles {
+  font-weight: bold;
+}
