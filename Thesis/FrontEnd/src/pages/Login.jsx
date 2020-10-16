@@ -111,7 +111,7 @@ class Login extends React.Component {
             <div className={styles.Logo}>
               <img src='../../sword_1.png' className={styles.sword} />
             </div>
-            <h1 className={styles.LogoName}>VerbAttack</h1>
+            <h1 className={styles.LogoName}>ChatAttack</h1>
           </div>
           <div className={styles.rightSide}>
             <div className={styles.languge}>

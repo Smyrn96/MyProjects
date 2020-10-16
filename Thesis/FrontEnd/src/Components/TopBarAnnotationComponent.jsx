@@ -14,7 +14,7 @@ class TopBarAnnotation extends Component {
                 <img src='../../sword_1.png' className={styles.sword} />
               </div>
             </NavLink>
-            <h1 className={styles.LogoName}>VerbAttack</h1>
+            <h1 className={styles.LogoName}>ChatAttack</h1>
           </div>
           <nav>
             <ul className={styles.Menu}>
